@@ -15,11 +15,11 @@ maxOfTwoNumbers(10,11)
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
 function findLongestWord(wordsArr) {
-       let longestWord = words.sort(function(a,b) {
+       let longestWord = wordsArr.sort(function(a,b) {
          return b.length - a.length;
        });
 
-       console.log (longestWord[0]);
+       console.log (longestWord[1]);
 }
 
 findLongestWord (['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot']);
@@ -30,18 +30,35 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(numbersArr) {
     let sum = 0;
-    for (let i = 0; i < numbers.length; i++)
-    sum += numbers[i];
+    for (let i = 0; i < numbersArr.length; i++)
+    sum += numbersArr[i];
     
-    return sumNumbers;
+    return sum;
 }
 
-console.log(sum(numbers));
+console.log(sumNumbers(numbers));
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+// Iteration #3.1 Bonus:
+function sum(arr) {
+  let sumItems = 0;
+    for (let i = 0; i < arr.length; i++)
+      if (typeof arr[i] === 'number'){
+        sumItems += arr[i];}
+    else if (typeof arr[i] === 'string'){
+        sumItems += arr[i].length;
+    } else if (typeof arr[i] === 'boolean'){
+        sumItems += Number (arr[i]);
+    }
+  return sumItems;
+}
+
+console.log (sum(mixedArr));
+
 
 
 
@@ -57,9 +74,17 @@ console.log (average(numbersAvg))
 
 
 // Level 2: Array of strings
-const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+const words = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(patates) {
+  let sumItems = 0;
+    for (let i = 0; i < patates.length; i++)
+         sumItems += patates[i].length;
+  return sumItems / patates.length;
+
+ }
+
+console.log (averageWordLength(words));
 
 // Bonus - Iteration #4.1
 function avg() {}
