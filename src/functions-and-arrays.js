@@ -74,7 +74,7 @@ console.log (average(numbersAvg))
 
 
 // Level 2: Array of strings
-const words = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+const words2 = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(patates) {
   let sumItems = 0;
@@ -84,7 +84,7 @@ function averageWordLength(patates) {
 
  }
 
-console.log (averageWordLength(words));
+console.log (averageWordLength(words2));
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -123,8 +123,15 @@ console.log (uniquifyArray(wordsUnique));
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arrWord, word) {
+  if (arrWord.includes(word)) {
+    return true
+  } else {
+    return false
+  }
+}
 
+console.log(doesWordExist(wordsFind,"eating"))
 
 
 // Iteration #7: Count repetition
@@ -142,8 +149,17 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrWords, word) {
+  let wordAppears = 0
+  for (let i = 0; i < wordsCount.length; i ++) {
+    if (wordsCount[i].includes(word)){
+      wordAppears += 1
+    }
+  }
+  return wordAppears;
+}
 
+console.log(howManyTimes(wordsCount, ' '))
 
 
 // Iteration #8: Bonus
